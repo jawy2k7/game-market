@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gửi Game - Chợ Ứng Dụng Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://via.placeholder.com/56x56.png?text=Logo" alt="Logo" class="logo" />
+        <div><h1>Chợ Ứng Dụng Game</h1></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="games.html">Danh sách Game</a>
+        <a href="guide.html">Hướng dẫn Đăng tải</a>
+        <a href="submit.html">Gửi Game</a>
+        <a href="team.html">Giới thiệu Nhóm</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Form Gửi Game</h2>
+    <p class="muted">Điền thông tin bên dưới hoặc sử dụng Google Form mẫu.</p>
+
+    <form id="submit-form" class="submit-form" method="post" action="#" onsubmit="handleSubmit(event)">
+      <label> Tên nhà phát triển / công ty
+        <input type="text" name="dev_name" required />
+      </label>
+
+      <label> Email liên hệ
+        <input type="email" name="email" required />
+      </label>
+
+      <label> Tên game
+        <input type="text" name="game_name" required />
+      </label>
+
+      <label> Thể loại
+        <input type="text" name="genre" placeholder="Ví dụ: Puzzle, Arcade" />
+      </label>
+
+      <label> Link tải (Google Drive / Dropbox)
+        <input type="url" name="download_link" placeholder="https://drive.google.com/..." />
+      </label>
+
+      <label> Link video demo (YouTube)
+        <input type="url" name="video_link" placeholder="https://www.youtube.com/..." />
+      </label>
+
+      <label> Hình minh họa (link)
+        <input type="url" name="image_link" placeholder="https://..." />
+      </label>
+
+      <label> Mô tả ngắn
+        <textarea name="short_desc" rows="4"></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Gửi</button>
+        <button type="reset" class="btn outline">Xóa</button>
+      </div>
+
+      <div id="submit-msg" class="submit-msg" aria-live="polite"></div>
+    </form>
+
+    <p class="muted">Hoặc gửi qua Google Form mẫu: <a href="https://forms.gle/your-google-form" target="_blank" rel="noopener">Mở Google Form</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Chợ Ứng Dụng Game</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function handleSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('submit-msg');
+      msg.textContent = 'Gửi thành công. Cảm ơn bạn đã gửi game. Nhóm sẽ kiểm duyệt trong vòng 3-5 ngày làm việc.';
+      msg.classList.add('success');
+      e.target.reset();
+      window.scrollTo({ top: msg.offsetTop - 80, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

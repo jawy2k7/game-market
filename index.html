@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chợ Ứng Dụng Game - Trang chủ</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Chợ ứng dụng game mô phỏng - nơi nhà phát triển gửi game và người dùng tải game." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://via.placeholder.com/56x56.png?text=Logo" alt="Logo" class="logo" />
+        <div>
+          <h1>Chợ Ứng Dụng Game</h1>
+          <p class="tagline">Nơi nhà phát triển giới thiệu game, người dùng tải về chơi</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="games.html">Danh sách Game</a>
+        <a href="guide.html">Hướng dẫn Đăng tải</a>
+        <a href="submit.html">Gửi Game</a>
+        <a href="team.html">Giới thiệu Nhóm</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h2>Chào mừng đến với Chợ Ứng Dụng Game</h2>
+          <p>Chợ Ứng Dụng Game là nền tảng mô phỏng để các nhà phát triển đăng tải game, chia sẻ demo và người dùng có thể tải về trải nghiệm. Mục tiêu: hỗ trợ sinh viên và indie dev giới thiệu sản phẩm, thu thập phản hồi.</p>
+          <ul class="features">
+            <li><strong>Đăng tải dễ dàng</strong> — Form trực tuyến và quy trình kiểm duyệt</li>
+            <li><strong>Danh sách game</strong> — Thông tin đầy đủ: tên, tác giả, mô tả, link tải, video demo</li>
+            <li><strong>Đánh giá &amp; yêu thích</strong> — Người dùng có thể đánh giá sao và lưu game yêu thích</li>
+          </ul>
+          <div class="home-cta">
+            <a class="btn" href="games.html">Xem Game</a>
+            <a class="btn outline" href="submit.html">Gửi Game</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://via.placeholder.com/520x320.png?text=Banner+Game+Store" alt="Banner" />
+        </div>
+      </div>
+    </section>
+
+    <section class="container section alt">
+      <h2>Tính năng nổi bật</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Danh sách game</h3>
+          <p>Hiển thị thông tin chi tiết cho mỗi game: tên, tác giả, mô tả, link tải, video demo.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Quy trình đăng tải</h3>
+          <p>Hướng dẫn từng bước cho nhà phát triển và form gửi game trực tuyến.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Đánh giá &amp; Yêu thích</h3>
+          <p>Người dùng có thể đánh giá sao và lưu game yêu thích (client-side demo).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Chợ Ứng Dụng Game — Nhóm Sinh Viên</p>
+      <p class="muted">Điều khoản sử dụng: nội dung do nhà phát triển chịu trách nhiệm; nhóm chỉ mô phỏng nền tảng.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

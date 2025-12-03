@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hướng dẫn Đăng tải - Chợ Ứng Dụng Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://via.placeholder.com/56x56.png?text=Logo" alt="Logo" class="logo" />
+        <div><h1>Chợ Ứng Dụng Game</h1></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="games.html">Danh sách Game</a>
+        <a href="guide.html">Hướng dẫn Đăng tải</a>
+        <a href="submit.html">Gửi Game</a>
+        <a href="team.html">Giới thiệu Nhóm</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section alt">
+    <h2>Hướng dẫn Đăng tải Game</h2>
+
+    <ol class="process">
+      <li><strong>Chuẩn bị</strong>: Tên game, mô tả ngắn, ảnh minh họa, link tải (Drive/Dropbox), video demo (YouTube), thể loại.</li>
+      <li><strong>Gửi form</strong>: Điền biểu mẫu Gửi Game tại trang Gửi Game.</li>
+      <li><strong>Kiểm duyệt</strong>: Nhóm kiểm duyệt nội dung theo điều khoản (không vi phạm bản quyền, nội dung bạo lực quá mức, v.v.).</li>
+      <li><strong>Đăng</strong>: Sau khi duyệt, game sẽ xuất hiện trong danh sách.</li>
+    </ol>
+
+    <h3>Quy định nội dung</h3>
+    <ul>
+      <li>Nội dung không vi phạm pháp luật và chính sách bản quyền.</li>
+      <li>Không đăng nội dung bạo lực quá mức, nội dung khiêu dâm, hoặc kích động thù hận.</li>
+      <li>Đảm bảo link tải an toàn, không chứa mã độc.</li>
+    </ul>
+
+    <h3>Gợi ý định dạng</h3>
+    <p>File cài đặt: .zip, .apk; Ảnh minh họa: .png/.jpg; Video demo: YouTube link.</p>
+
+    <div class="note">
+      <strong>Lưu ý:</strong> Đây là nền tảng mô phỏng cho đồ án. Trong thực tế cần hệ thống kiểm duyệt và lưu trữ an toàn.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Chợ Ứng Dụng Game</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

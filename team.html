@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Giới thiệu Nhóm - Chợ Ứng Dụng Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://via.placeholder.com/56x56.png?text=Logo" alt="Logo" class="logo" />
+        <div><h1>Chợ Ứng Dụng Game</h1></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="games.html">Danh sách Game</a>
+        <a href="guide.html">Hướng dẫn Đăng tải</a>
+        <a href="submit.html">Gửi Game</a>
+        <a href="team.html">Giới thiệu Nhóm</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Giới thiệu Nhóm</h2>
+    <p class="muted">Nhóm thực hiện đồ án gồm 7 thành viên. Dưới đây là thông tin từng thành viên và vai trò.</p>
+
+    <div class="team-grid">
+      <!-- Member 1 -->
+      <div class="team-card">
+        <img src="https://via.placeholder.com/160.png?text=Member+1" alt="Member 1" />
+        <h3>Nguyễn Văn A</h3>
+        <p class="meta">Năm sinh 2001 • Vai trò: Quản lý dự án, Thiết kế web</p>
+        <p class="desc">Sở trường: UI/UX, tổ chức công việc, liên hệ nhóm.</p>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-card">
+        <img src="https://via.placeholder.com/160.png?text=Member+2" alt="Member 2" />
+        <h3>Trần Thị B</h3>
+        <p class="meta">Năm sinh 2000 • Vai trò: Lập trình game</p>
+        <p class="desc">Sở trường: Game logic, GameMaker, Unity Playground.</p>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-card">
+        <img src="https://via.placeholder.com/160.png?text=Member+3" alt="Member 3" />
+        <h3>Phạm Văn C</h3>
+        <p class="meta">Năm sinh 2001 • Vai trò: Thiết kế đồ họa</p>
+        <p class="desc">Sở trường: Asset art, banner, ảnh minh họa.</p>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-card">
+        <img src="https://via.placeholder.com/160.png?text=Member+4" alt="Member 4" />
+        <h3>Lê Thị D</h3>
+        <p class="meta">Năm sinh 2002 • Vai trò: Nội dung, mô tả</p>
+        <p class="desc">Sở trường: Viết mô tả game, biên tập nội dung.</p>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="team-card">
+        <img src="https://via.placeholder.com/160.png?text=Member+5" alt="Member 5" />
+        <h3>Hoàng Văn E</h3>
+        <p class="meta">Năm sinh 2000 • Vai trò: Lập trình web</p>
+        <p class="desc">Sở trường: HTML/CSS, JavaScript, tích hợp form.</p>
+      </div>
+
+      <!-- Member 6 -->
+      <div class="team-card">
+        <img src="https://via.placeholder.com/160.png?text=Member+6" alt="Member 6" />
+        <h3>Đỗ Thị F</h3>
+        <p class="meta">Năm sinh 2001 • Vai trò: Kiểm thử</p>
+        <p class="desc">Sở trường: Test chức năng, báo lỗi, đảm bảo UX.</p>
+      </div>
+
+      <!-- Member 7 -->
+      <div class="team-card">
+        <img src="https://via.placeholder.com/160.png?text=Member+7" alt="Member 7" />
+        <h3>Vũ Văn G</h3>
+        <p class="meta">Năm sinh 2002 • Vai trò: Video demo</p>
+        <p class="desc">Sở trường: Quay/chỉnh sửa video, tạo trailer demo.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Ghi chú:</strong> Thay ảnh, tên, năm sinh, mô tả và vai trò bằng thông tin thực tế của nhóm.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Chợ Ứng Dụng Game</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
