@@ -11,7 +11,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="https://via.placeholder.com/56x56.png?text=Logo" alt="Logo" class="logo" />
+        <img src="images/logo.jpg" alt="Logo" class="logo" />
         <div>
           <h1>Chợ Ứng Dụng Game</h1>
         </div>
@@ -21,7 +21,6 @@
         <a href="games.html">Danh sách Game</a>
         <a href="guide.html">Hướng dẫn Đăng tải</a>
         <a href="submit.html">Gửi Game</a>
-        <a href="team.html">Giới thiệu Nhóm</a>
       </nav>
     </div>
   </header>
@@ -47,7 +46,10 @@
             <button class="btn outline" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" onclick="openDemo(this)">Xem demo</button>
           </div>
           <div class="card-footer">
-            <div class="rating" data-score="5.0">⭐️ <span class="score">5.0</span></div>
+            <div class="rating" data-score="5.0">
+              ⭐️ <span class="score">5.0</span>
+              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
+            </div>
             <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
           </div>
         </div>
@@ -64,7 +66,10 @@
             <button class="btn outline" data-video="https://www.youtube.com/embed/9bZkp7q19f0" onclick="openDemo(this)">Xem demo</button>
           </div>
           <div class="card-footer">
-            <div class="rating" data-score="5.0">⭐️ <span class="score">5.0</span></div>
+            <div class="rating" data-score="5.0">
+              ⭐️ <span class="score">5.0</span>
+              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
+            </div>
             <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
           </div>
         </div>
@@ -81,7 +86,10 @@
             <button class="btn outline" data-video="https://www.youtube.com/embed/3JZ_D3ELwOQ" onclick="openDemo(this)">Xem demo</button>
           </div>
           <div class="card-footer">
-            <div class="rating" data-score="5.0">⭐️ <span class="score">5.0</span></div>
+            <div class="rating" data-score="5.0">
+              ⭐️ <span class="score">5.0</span>
+              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
+            </div>
             <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
           </div>
         </div>
@@ -98,7 +106,10 @@
             <button class="btn outline" data-video="https://www.youtube.com/embed/V-_O7nl0Ii0" onclick="openDemo(this)">Xem demo</button>
           </div>
           <div class="card-footer">
-            <div class="rating" data-score="5.0">⭐️ <span class="score">5.0</span></div>
+            <div class="rating" data-score="5.0">
+              ⭐️ <span class="score">5.0</span>
+              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
+            </div>
             <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
           </div>
         </div>
@@ -115,7 +126,10 @@
             <button class="btn outline" data-video="https://www.youtube.com/embed/2Vv-BfVoq4g" onclick="openDemo(this)">Xem demo</button>
           </div>
           <div class="card-footer">
-            <div class="rating" data-score="5.0">⭐️ <span class="score">5.0</span></div>
+            <div class="rating" data-score="5.0">
+              ⭐️ <span class="score">5.0</span>
+              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
+            </div>
             <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
           </div>
         </div>
@@ -137,6 +151,31 @@
         <iframe id="demo-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+  </div>
+
+  <!-- Modal đánh giá -->
+  <div id="rating-modal" class="modal" aria-hidden="true" onclick="closeRating(event)">
+    <div class="modal-content rating-modal-content" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeRating(event)">✕</button>
+      <div class="rating-form">
+        <h3>Đánh giá game</h3>
+        <p class="muted">Chọn số sao để đánh giá</p>
+        <div class="star-rating">
+          <span class="star" data-value="1" onclick="selectStar(1)">☆</span>
+          <span class="star" data-value="2" onclick="selectStar(2)">☆</span>
+          <span class="star" data-value="3" onclick="selectStar(3)">☆</span>
+          <span class="star" data-value="4" onclick="selectStar(4)">☆</span>
+          <span class="star" data-value="5" onclick="selectStar(5)">☆</span>
+        </div>
+        <button class="btn" onclick="submitRating()">Gửi đánh giá</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast-notification" class="toast-notification">
+    <div class="toast-icon">⭐</div>
+    <div class="toast-message"></div>
   </div>
 
   <script>
@@ -172,6 +211,82 @@
       const modal = document.getElementById('demo-modal');
       modal.style.display = 'none';
       modal.setAttribute('aria-hidden', 'true');
+    }
+
+    let currentRatingCard = null;
+    let selectedStarValue = 0;
+
+    function openRating(btn) {
+      currentRatingCard = btn.closest('.card');
+      selectedStarValue = 0;
+      document.querySelectorAll('.star').forEach(s => s.textContent = '☆');
+      const modal = document.getElementById('rating-modal');
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeRating(e) {
+      e && e.preventDefault && e.preventDefault();
+      const modal = document.getElementById('rating-modal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      currentRatingCard = null;
+      selectedStarValue = 0;
+    }
+
+    function selectStar(value) {
+      selectedStarValue = value;
+      const stars = document.querySelectorAll('.star');
+      stars.forEach((star, index) => {
+        star.textContent = index < value ? '★' : '☆';
+      });
+    }
+
+    function submitRating() {
+      if (selectedStarValue === 0) {
+        showToast('Vui lòng chọn số sao đánh giá!', 'warning');
+        return;
+      }
+      
+      if (currentRatingCard) {
+        const ratingDiv = currentRatingCard.querySelector('.rating');
+        const currentScore = parseFloat(ratingDiv.dataset.score);
+        const currentCount = parseInt(ratingDiv.dataset.count || '1');
+        
+        // Tính điểm trung bình mới
+        const newScore = ((currentScore * currentCount) + selectedStarValue) / (currentCount + 1);
+        ratingDiv.dataset.score = newScore.toFixed(1);
+        ratingDiv.dataset.count = currentCount + 1;
+        
+        // Cập nhật hiển thị
+        const scoreSpan = ratingDiv.querySelector('.score');
+        scoreSpan.textContent = newScore.toFixed(1);
+        
+        showToast(`Cảm ơn bạn đã đánh giá ${selectedStarValue} sao! ⭐`, 'success');
+        closeRating();
+      }
+    }
+
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('toast-notification');
+      const messageEl = toast.querySelector('.toast-message');
+      const iconEl = toast.querySelector('.toast-icon');
+      
+      messageEl.textContent = message;
+      
+      if (type === 'success') {
+        iconEl.textContent = '✓';
+        toast.className = 'toast-notification toast-success';
+      } else if (type === 'warning') {
+        iconEl.textContent = '⚠';
+        toast.className = 'toast-notification toast-warning';
+      }
+      
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
     }
   </script>
 </body>
