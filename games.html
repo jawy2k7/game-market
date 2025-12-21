@@ -78,12 +78,25 @@
 
     <div class="grid game-grid">
       <!-- Game 1: Happy Boo -->
-      <div class="card game-card game-color-1" data-name="happy boo" data-tags="survival shooter">
+      <div class="card game-card game-color-1" data-name="happy boo" data-tags="survival shooter" data-game-id="happy-boo">
+        <button class="favorite-btn" onclick="toggleFavorite('happy-boo', event)">
+          <span class="heart">♡</span>
+        </button>
         <div class="game-badge">🎮</div>
         <img src="image/GameCover/HappyBoo.png" alt="Happy Boo" />
         <div class="card-body">
           <h3 class="game-title">Happy Boo</h3>
           <p class="meta">Developer: Nguyễn Huỳnh Khíp</p>
+          <div class="game-rating">
+            <div class="stars" data-game-id="happy-boo">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <span class="rating-count">(0)</span>
+          </div>
           <div class="game-tags">
             <span class="tag">Survival</span>
             <span class="tag">Shooter</span>
@@ -97,12 +110,25 @@
       </div>
 
       <!-- Game 2: Break Out -->
-      <div class="card game-card game-color-2" data-name="break out" data-tags="arcade casual">
+      <div class="card game-card game-color-2" data-name="break out" data-tags="arcade casual" data-game-id="break-out">
+        <button class="favorite-btn" onclick="toggleFavorite('break-out', event)">
+          <span class="heart">♡</span>
+        </button>
         <div class="game-badge">🎯</div>
         <img src="image/GameCover/BreakOut.jpg" alt="Break Out" />
         <div class="card-body">
           <h3 class="game-title">Break Out</h3>
           <p class="meta">Developer: Đặng Minh Hùng</p>
+          <div class="game-rating">
+            <div class="stars" data-game-id="break-out">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <span class="rating-count">(0)</span>
+          </div>
           <div class="game-tags">
             <span class="tag">Arcade</span>
             <span class="tag">Casual</span>
@@ -116,12 +142,25 @@
       </div>
 
       <!-- Game 3: Jump Ball -->
-      <div class="card game-card game-color-3" data-name="jump ball" data-tags="adventure puzzle">
+      <div class="card game-card game-color-3" data-name="jump ball" data-tags="adventure puzzle" data-game-id="jump-ball">
+        <button class="favorite-btn" onclick="toggleFavorite('jump-ball', event)">
+          <span class="heart">♡</span>
+        </button>
         <div class="game-badge">⚡</div>
         <img src="image/GameCover/JumpBall.jpg" alt="Jump Ball" />
         <div class="card-body">
           <h3 class="game-title">Jump Ball</h3>
           <p class="meta">Developer: Trần Phước Anh Khoa</p>
+          <div class="game-rating">
+            <div class="stars" data-game-id="jump-ball">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <span class="rating-count">(0)</span>
+          </div>
           <div class="game-tags">
             <span class="tag">Platformer</span>
             <span class="tag">2D</span>
@@ -135,12 +174,25 @@
       </div>
 
       <!-- Game 4: RPG -->
-      <div class="card game-card game-color-4" data-name="mr pink mrpink" data-tags="adventure puzzle action">
+      <div class="card game-card game-color-4" data-name="mr pink mrpink" data-tags="adventure puzzle action" data-game-id="mr-pink">
+        <button class="favorite-btn" onclick="toggleFavorite('mr-pink', event)">
+          <span class="heart">♡</span>
+        </button>
         <div class="game-badge">🗡️</div>
         <img src="image/GameCover/MrPink.png" alt="RPG" />
         <div class="card-body">
           <h3 class="game-title">Mr.Pink</h3>
           <p class="meta">Developer: Huỳnh Hoàng Huy</p>
+          <div class="game-rating">
+            <div class="stars" data-game-id="mr-pink">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <span class="rating-count">(0)</span>
+          </div>
           <div class="game-tags">
             <span class="tag">Action</span>
             <span class="tag">Top-Down</span>
@@ -154,12 +206,25 @@
       </div>
 
       <!-- Game 5: Snake Remix -->
-      <div class="card game-card game-color-5" data-name="snake remix" data-tags="arcade casual">
+      <div class="card game-card game-color-5" data-name="snake remix" data-tags="arcade casual" data-game-id="snake-remix">
+        <button class="favorite-btn" onclick="toggleFavorite('snake-remix', event)">
+          <span class="heart">♡</span>
+        </button>
         <div class="game-badge">🐍</div>
         <img src="image/GameCover/SnakeRemix.png" alt="Snake Remix" />
         <div class="card-body">
           <h3 class="game-title">Snake Remix</h3>
           <p class="meta">Developer: Phạm Quốc Huy</p>
+          <div class="game-rating">
+            <div class="stars" data-game-id="snake-remix">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <span class="rating-count">(0)</span>
+          </div>
           <div class="game-tags">
             <span class="tag">Music</span>
             <span class="tag">Arcade</span>
@@ -394,6 +459,132 @@
         closeGameDetail();
       }
     }
+
+    // Rating and Favorite Functionality
+    const ratingsKey = 'gameRatings';
+    const favoritesKey = 'gameFavorites';
+
+    // Load ratings from localStorage
+    function loadRatings() {
+      return JSON.parse(localStorage.getItem(ratingsKey)) || {};
+    }
+
+    // Save ratings to localStorage
+    function saveRatings(ratings) {
+      localStorage.setItem(ratingsKey, JSON.stringify(ratings));
+    }
+
+    // Load favorites from localStorage
+    function loadFavorites() {
+      return JSON.parse(localStorage.getItem(favoritesKey)) || [];
+    }
+
+    // Save favorites to localStorage
+    function saveFavorites(favorites) {
+      localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+    }
+
+    // Toggle favorite
+    function toggleFavorite(gameId, event) {
+      event.stopPropagation();
+      const favorites = loadFavorites();
+      const index = favorites.indexOf(gameId);
+      const btn = event.currentTarget;
+      const heart = btn.querySelector('.heart');
+
+      if (index > -1) {
+        favorites.splice(index, 1);
+        heart.textContent = '♡';
+        btn.classList.remove('active');
+      } else {
+        favorites.push(gameId);
+        heart.textContent = '♥';
+        btn.classList.add('active');
+      }
+
+      saveFavorites(favorites);
+    }
+
+    // Rate game
+    function rateGame(gameId, rating) {
+      const ratings = loadRatings();
+      if (!ratings[gameId]) {
+        ratings[gameId] = { total: 0, count: 0 };
+      }
+      ratings[gameId].total += rating;
+      ratings[gameId].count += 1;
+      saveRatings(ratings);
+      updateRatingDisplay(gameId);
+    }
+
+    // Update rating display
+    function updateRatingDisplay(gameId) {
+      const ratings = loadRatings();
+      const gameRating = ratings[gameId];
+      const starsContainer = document.querySelector(`.stars[data-game-id="${gameId}"]`);
+      
+      if (starsContainer) {
+        const stars = starsContainer.querySelectorAll('.star');
+        const ratingCount = starsContainer.parentElement.querySelector('.rating-count');
+        
+        if (gameRating && gameRating.count > 0) {
+          const avgRating = gameRating.total / gameRating.count;
+          stars.forEach((star, index) => {
+            if (index < Math.round(avgRating)) {
+              star.classList.add('filled');
+            } else {
+              star.classList.remove('filled');
+            }
+          });
+          ratingCount.textContent = `(${gameRating.count})`;
+        }
+      }
+    }
+
+    // Initialize ratings and favorites on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize star ratings
+      document.querySelectorAll('.stars').forEach(starsContainer => {
+        const gameId = starsContainer.getAttribute('data-game-id');
+        const stars = starsContainer.querySelectorAll('.star');
+        
+        stars.forEach(star => {
+          star.addEventListener('click', function() {
+            const rating = parseInt(this.getAttribute('data-value'));
+            rateGame(gameId, rating);
+          });
+
+          star.addEventListener('mouseenter', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            stars.forEach((s, index) => {
+              if (index < value) {
+                s.classList.add('hover');
+              } else {
+                s.classList.remove('hover');
+              }
+            });
+          });
+        });
+
+        starsContainer.addEventListener('mouseleave', function() {
+          stars.forEach(s => s.classList.remove('hover'));
+        });
+
+        updateRatingDisplay(gameId);
+      });
+
+      // Initialize favorites
+      const favorites = loadFavorites();
+      favorites.forEach(gameId => {
+        const card = document.querySelector(`[data-game-id="${gameId}"]`);
+        if (card) {
+          const btn = card.querySelector('.favorite-btn');
+          const heart = btn.querySelector('.heart');
+          heart.textContent = '♥';
+          btn.classList.add('active');
+        }
+      });
+    });
 
     // Search and Filter Functionality
     const searchInput = document.getElementById('searchInput');

@@ -1039,3 +1039,107 @@ main h3 { margin-top:1.5rem; margin-bottom:0.8rem; font-size:1.2rem; color:#fff;
     font-size: 0.85rem;
   }
 }
+
+/* Rating and Favorite Styles */
+.favorite-btn {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  width: 45px;
+  height: 45px;
+  background: rgba(7,16,38,0.9);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255,20,100,0.2);
+  border-color: rgba(255,20,100,0.5);
+}
+
+.favorite-btn.active {
+  background: rgba(255,20,100,0.3);
+  border-color: rgba(255,20,100,0.8);
+}
+
+.favorite-btn .heart {
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.3s ease;
+}
+
+.favorite-btn:hover .heart {
+  color: #ff1464;
+}
+
+.favorite-btn.active .heart {
+  color: #ff1464;
+  animation: heartBeat 0.5s ease;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.3); }
+  50% { transform: scale(1.1); }
+  75% { transform: scale(1.2); }
+}
+
+.game-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.stars {
+  display: flex;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.star:hover,
+.star.hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+.star.filled {
+  color: #ffd700;
+}
+
+.rating-count {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  margin-left: 0.3rem;
+}
+
+/* Responsive Rating and Favorite */
+@media (max-width: 768px) {
+  .favorite-btn {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .favorite-btn .heart {
+    font-size: 1.2rem;
+  }
+  
+  .star {
+    font-size: 1.1rem;
+  }
+}
