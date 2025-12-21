@@ -1,6 +1,10 @@
 # Large files - keep local only
 games/*.zip
-video/*.mp4
+
+# FFmpeg tools
+ffmpeg-*/
+ffmpeg.zip
+compress_videos.py
 
 # OS files
 .DS_Store
