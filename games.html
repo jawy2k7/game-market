@@ -3,11 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Danh sách Game - Chợ Ứng Dụng Game</title>
+  <title>Giới thiệu Game - Chợ Ứng Dụng Game</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="gamepage">
+  <!-- Animated Background Particles -->
+  <div class="particles-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
@@ -25,268 +39,345 @@
     </div>
   </header>
 
-  <main class="container section">
-    <h2>Danh sách Game</h2>
-    <p class="muted">Danh sách các game đã đăng tải. Bấm Xem chi tiết để mở video demo hoặc tải về.</p>
-
-    <div class="controls">
-      <input id="search" type="search" placeholder="Tìm theo tên hoặc thể loại..." />
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="gradient-text">Khám Phá</span>
+          <span class="neon-text">Thế Giới Game</span>
+        </h1>
+        <p class="hero-subtitle">Bộ sưu tập những trò chơi độc đáo được phát triển bởi nhóm chúng tôi</p>
+      </div>
     </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="rgba(7,16,38,0.95)"></path>
+      </svg>
+    </div>
+  </section>
 
-    <div id="game-list" class="grid">
-      <!-- Lặp 5 game mẫu -->
-      <article class="card" data-title="Happy Boo" data-genre="Arcade">
-        <img src="https://via.placeholder.com/320x180.png?text=Catch+the+Clown" alt="Happy Boo" />
+  <main class="container section">
+    <h2 class="section-title gradient-text">Danh Sách Game</h2>
+    <p class="muted text-center">Khám phá những trò chơi tuyệt vời do nhóm chúng tôi phát triển</p>
+
+    <div class="grid game-grid">
+      <!-- Game 1: Happy Boo -->
+      <div class="card game-card game-color-1">
+        <div class="game-badge">🎮</div>
+        <img src="image/GameCover/HappyBoo.png" alt="Happy Boo" />
         <div class="card-body">
           <h3 class="game-title">Happy Boo</h3>
-          <p class="meta">Tác giả: Nguyễn Huỳnh Khíp</p>
-          <p class="desc">Thể loại bắn súng sinh tồn</p>
-          <div class="card-actions">
-            <a class="btn" href="#" target="_blank" rel="noopener">Tải về</a>
-            <button class="btn outline" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" onclick="openDemo(this)">Xem demo</button>
+          <p class="meta">Developer: Nguyễn Huỳnh Khíp</p>
+          <div class="game-tags">
+            <span class="tag">Survival</span>
+            <span class="tag">Shooter</span>
           </div>
-          <div class="card-footer">
-            <div class="rating" data-score="5.0">
-              ⭐️ <span class="score">5.0</span>
-              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
-            </div>
-            <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
+          <p class="desc">Mini survival–shooter đáng yêu nhưng đầy thử thách trong khu rừng phép thuật hỗn loạn.</p>
+          <div class="card-actions">
+            <button class="btn small" disabled>Đang Cập Nhật</button>
+            <button class="btn outline small" onclick="showGameDetail('happy-boo')">Chi Tiết</button>
           </div>
         </div>
-      </article>
+      </div>
 
-      <article class="card" data-title="Break Out" data-genre="Puzzle">
-        <img src="https://via.placeholder.com/320x180.png?text=Fruit+Game" alt="Break Out" />
+      <!-- Game 2: Break Out -->
+      <div class="card game-card game-color-2">
+        <div class="game-badge">🎯</div>
+        <img src="image/GameCover/BreakOut.jpg" alt="Break Out" />
         <div class="card-body">
           <h3 class="game-title">Break Out</h3>
-          <p class="meta">Tác giả: Đặng Minh Hùng</p>
-          <p class="desc">Ghép trái cây để ghi điểm.</p>
-          <div class="card-actions">
-            <a class="btn" href="#" target="_blank" rel="noopener">Tải về</a>
-            <button class="btn outline" data-video="https://www.youtube.com/embed/9bZkp7q19f0" onclick="openDemo(this)">Xem demo</button>
+          <p class="meta">Developer: Đặng Minh Hùng</p>
+          <div class="game-tags">
+            <span class="tag">Arcade</span>
+            <span class="tag">Casual</span>
           </div>
-          <div class="card-footer">
-            <div class="rating" data-score="5.0">
-              ⭐️ <span class="score">5.0</span>
-              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
-            </div>
-            <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
+          <p class="desc">Trò chơi phá gạch cổ điển dành cho mọi lứa tuổi với lối chơi đơn giản, giải trí cao.</p>
+          <div class="card-actions">
+            <a href="games/Breakout-1_0_0-windows.zip" download class="btn small">📥 Tải Game</a>
+            <button class="btn outline small" onclick="showGameDetail('break-out')">Chi Tiết</button>
           </div>
         </div>
-      </article>
+      </div>
 
-      <article class="card" data-title="Jump Ball" data-genre="Adventure">
-        <img src="https://via.placeholder.com/320x180.png?text=Maze+Runner" alt="Jump Ball" />
+      <!-- Game 3: Jump Ball -->
+      <div class="card game-card game-color-3">
+        <div class="game-badge">⚡</div>
+        <img src="image/GameCover/JumpBall.jpg" alt="Jump Ball" />
         <div class="card-body">
           <h3 class="game-title">Jump Ball</h3>
-          <p class="meta">Tác giả: Trần Phước Anh Khoa</p>
-          <p class="desc">Thể loại parkour</p>
-          <div class="card-actions">
-            <a class="btn" href="#" target="_blank" rel="noopener">Tải về</a>
-            <button class="btn outline" data-video="https://www.youtube.com/embed/3JZ_D3ELwOQ" onclick="openDemo(this)">Xem demo</button>
+          <p class="meta">Developer: Trần Phước Anh Khoa</p>
+          <div class="game-tags">
+            <span class="tag">Platformer</span>
+            <span class="tag">2D</span>
           </div>
-          <div class="card-footer">
-            <div class="rating" data-score="5.0">
-              ⭐️ <span class="score">5.0</span>
-              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
-            </div>
-            <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
+          <p class="desc">2D platformer cổ điển - điều khiển quả bóng nhảy vượt chướng ngại vật đầy thử thách.</p>
+          <div class="card-actions">
+            <a href="games/JumpBall.zip" download class="btn small">📥 Tải Game</a>
+            <button class="btn outline small" onclick="showGameDetail('jump-ball')">Chi Tiết</button>
           </div>
         </div>
-      </article>
+      </div>
 
-      <article class="card" data-title="RPG" data-genre="Shooter">
-        <img src="https://via.placeholder.com/320x180.png?text=Space+Defender" alt="RPG" />
+      <!-- Game 4: RPG -->
+      <div class="card game-card game-color-4">
+        <div class="game-badge">🗡️</div>
+        <img src="image/GameCover/MrPink.png" alt="RPG" />
         <div class="card-body">
-          <h3 class="game-title">RPG</h3>
-          <p class="meta">Tác giả: Huỳnh Hoàng Huy</p>
-          <p class="desc">Game nhập vai RPG vượt ải</p>
-          <div class="card-actions">
-            <a class="btn" href="#" target="_blank" rel="noopener">Tải về</a>
-            <button class="btn outline" data-video="https://www.youtube.com/embed/V-_O7nl0Ii0" onclick="openDemo(this)">Xem demo</button>
+          <h3 class="game-title">Mr.Pink</h3>
+          <p class="meta">Developer: Huỳnh Hoàng Huy</p>
+          <div class="game-tags">
+            <span class="tag">Action</span>
+            <span class="tag">Top-Down</span>
           </div>
-          <div class="card-footer">
-            <div class="rating" data-score="5.0">
-              ⭐️ <span class="score">5.0</span>
-              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
-            </div>
-            <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
+          <p class="desc">Game phiêu lưu hành động pixel art top-down, khám phá vùng đất nguy hiểm chiến đấu với quái vật.</p>
+          <div class="card-actions">
+            <a href="games/Mr.Pink.zip" download class="btn small">📥 Tải Game</a>
+            <button class="btn outline small" onclick="showGameDetail('mr-pink')">Chi Tiết</button>
           </div>
         </div>
-      </article>
+      </div>
 
-      <article class="card" data-title="Snake Remix" data-genre="Puzzle">
-        <img src="https://via.placeholder.com/320x180.png?text=Puzzle+Island" alt="Snake Remix" />
+      <!-- Game 5: Snake Remix -->
+      <div class="card game-card game-color-5">
+        <div class="game-badge">🐍</div>
+        <img src="image/GameCover/SnakeRemix.png" alt="Snake Remix" />
         <div class="card-body">
           <h3 class="game-title">Snake Remix</h3>
-          <p class="meta">Tác giả: Phạm Quốc Huy</p>
-          <p class="desc">Di chuyển rắn để ăn táo từ đó tăng độ dài của rắn</p>
-          <div class="card-actions">
-            <a class="btn" href="#" target="_blank" rel="noopener">Tải về</a>
-            <button class="btn outline" data-video="https://www.youtube.com/embed/2Vv-BfVoq4g" onclick="openDemo(this)">Xem demo</button>
+          <p class="meta">Developer: Phạm Quốc Huy</p>
+          <div class="game-tags">
+            <span class="tag">Music</span>
+            <span class="tag">Arcade</span>
           </div>
-          <div class="card-footer">
-            <div class="rating" data-score="5.0">
-              ⭐️ <span class="score">5.0</span>
-              <button class="rate-btn" onclick="openRating(this)">Đánh giá</button>
-            </div>
-            <button class="fav" onclick="toggleFav(this)">♡ Yêu thích</button>
+          <p class="desc">Rắn săn mồi cổ điển kết hợp âm nhạc remix - tốc độ thay đổi theo nhịp điệu bản nhạc.</p>
+          <div class="card-actions">
+            <a href="games/snake remix-20251221T180245Z-3-001.zip" download class="btn small">📥 Tải Game</a>
+            <button class="btn outline small" onclick="showGameDetail('snake-remix')">Chi Tiết</button>
           </div>
         </div>
-      </article>
+      </div>
+
+      <!-- Game 6: Coming Soon -->
+      <div class="card game-card game-color-6">
+        <div class="game-badge">🎨</div>
+        <img src="https://via.placeholder.com/400x200.png?text=Coming+Soon" alt="Coming Soon" />
+        <div class="card-body">
+          <h3 class="game-title">Sắp Ra Mắt</h3>
+          <p class="meta">Developer: Team</p>
+          <div class="game-tags">
+            <span class="tag">Mystery</span>
+            <span class="tag">New</span>
+          </div>
+          <p class="desc">Chúng tôi đang phát triển thêm nhiều trò chơi mới. Hãy quay lại để khám phá những trải nghiệm tuyệt vời!</p>
+          <div class="card-actions">
+            <button class="btn small" disabled>Sắp Ra Mắt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section" style="margin-top: 5rem;">
+      <div class="stat-card stat-pulse">
+        <div class="stat-icon">🎮</div>
+        <h4 class="counter" data-target="5">0</h4>
+        <p>Game Hiện Có</p>
+      </div>
+      <div class="stat-card stat-pulse" style="animation-delay: 0.2s;">
+        <div class="stat-icon">⭐</div>
+        <h4><span class="counter" data-target="100">0</span>%</h4>
+        <p>Độc Đáo</p>
+      </div>
+      <div class="stat-card stat-pulse" style="animation-delay: 0.4s;">
+        <div class="stat-icon">🚀</div>
+        <h4 class="counter" data-target="7">0</h4>
+        <p>Developers</p>
+      </div>
+      <div class="stat-card stat-pulse" style="animation-delay: 0.6s;">
+        <div class="stat-icon">💯</div>
+        <h4><span class="counter" data-target="100">0</span>%</h4>
+        <p>Passion</p>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h3 class="gradient-text">Tham Gia Cùng Chúng Tôi</h3>
+      <p class="muted">Khám phá đội ngũ phát triển và câu chuyện đằng sau những trò chơi</p>
+      <div class="cta-buttons">
+        <a href="member.html" class="btn btn-primary-animated">
+          <span class="btn-content">
+            <span class="btn-icon">👥</span>
+            <span>Gặp Gỡ Team</span>
+          </span>
+        </a>
+        <a href="index.html" class="btn btn-secondary-animated">
+          <span class="btn-content">
+            <span class="btn-icon">🏠</span>
+            <span>Về Trang Chủ</span>
+          </span>
+        </a>
+      </div>
     </div>
   </main>
 
+  <!-- Game Detail Modal -->
+  <div id="gameModal" class="game-modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeGameDetail()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
   <footer class="site-footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,50 C300,100 600,0 900,50 C1050,75 1150,50 1200,60 L1200,0 L0,0 Z" fill="rgba(0,212,255,0.05)"></path>
+      </svg>
+    </div>
     <div class="container">
-      <p>© <span id="year"></span> Chợ Ứng Dụng Game</p>
+      <p class="footer-brand">🎮 Chợ Ứng Dụng Game</p>
+      <p>© <span id="year"></span> Nhóm 7-Elenven đam mê sáng tạo</p>
+      <p class="footer-tagline">Made with ❤️ and lots of ☕</p>
     </div>
   </footer>
 
-  <!-- Modal demo video -->
-  <div id="demo-modal" class="modal" aria-hidden="true" onclick="closeDemo(event)">
-    <div class="modal-content" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeDemo(event)">✕</button>
-      <div class="video-wrap">
-        <iframe id="demo-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal đánh giá -->
-  <div id="rating-modal" class="modal" aria-hidden="true" onclick="closeRating(event)">
-    <div class="modal-content rating-modal-content" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeRating(event)">✕</button>
-      <div class="rating-form">
-        <h3>Đánh giá game</h3>
-        <p class="muted">Chọn số sao để đánh giá</p>
-        <div class="star-rating">
-          <span class="star" data-value="1" onclick="selectStar(1)">☆</span>
-          <span class="star" data-value="2" onclick="selectStar(2)">☆</span>
-          <span class="star" data-value="3" onclick="selectStar(3)">☆</span>
-          <span class="star" data-value="4" onclick="selectStar(4)">☆</span>
-          <span class="star" data-value="5" onclick="selectStar(5)">☆</span>
-        </div>
-        <button class="btn" onclick="submitRating()">Gửi đánh giá</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast notification -->
-  <div id="toast-notification" class="toast-notification">
-    <div class="toast-icon">⭐</div>
-    <div class="toast-message"></div>
-  </div>
-
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const searchInput = document.getElementById('search');
-    searchInput && searchInput.addEventListener('input', function () {
-      const q = this.value.trim().toLowerCase();
-      document.querySelectorAll('#game-list .card').forEach(card => {
-        const title = card.dataset.title.toLowerCase();
-        const genre = (card.dataset.genre || '').toLowerCase();
-        card.style.display = (title.includes(q) || genre.includes(q)) ? '' : 'none';
+    
+    // Counter Animation
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, 16);
+    }
+    
+    // Intersection Observer for Counter
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.counter');
+          counters.forEach(counter => animateCounter(counter));
+          observer.unobserve(entry.target);
+        }
       });
     });
+    
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) observer.observe(statsSection);
 
-    function toggleFav(btn) {
-      btn.classList.toggle('fav-active');
-      btn.textContent = btn.classList.contains('fav-active') ? '♥ Đã yêu thích' : '♡ Yêu thích';
+    // Game Detail Modal
+    const gameDetails = {
+      'happy-boo': {
+        title: 'Happy Boo',
+        video: 'video/HappyBoo.mp4',
+        content: `
+          <h3>Cốt truyện</h3>
+          <p>Trong một khu rừng cổ xưa, tồn tại một sinh vật nhỏ mang tên Boo – người giữ cân bằng của rừng. Một ngày nọ, ma thuật tự nhiên bị xáo trộn, khiến Slime Rừng vô tình hấp thụ quá nhiều năng lượng sự sống và muốn xâm chiếm khu rừng. Nó không còn nhận ra Boo là bạn, mà xem bạn như kẻ xâm phạm.</p>
+          <p>Để ngăn Slime Rừng lan rộng, Boo phải chiến đấu cầm chân nó càng lâu càng tốt, chờ các linh hồn trong rừng thức tỉnh và lập lại trật tự.</p>
+          <h3>Mô tả</h3>
+          <p>Happy Boo là một mini survival–shooter đáng yêu nhưng đầy thử thách, nơi bạn điều khiển nhân vật nhỏ bé Boo trong một khu rừng phép thuật đang hỗn loạn. Slime Rừng đã mất kiểm soát và không ngừng truy đuổi bạn. Với khẩu súng trong tay và khả năng né đòn linh hoạt, bạn phải sống sót càng lâu càng tốt giữa cơn ác mộng... siêu dễ thương này?</p>
+        `
+      },
+      'break-out': {
+        title: 'Break Out',
+        video: 'video/BreakOut.mp4',
+        content: `
+          <h3>Cốt truyện</h3>
+          <p>Không có</p>
+          <h3>Mô tả</h3>
+          <p>Game dành cho mọi lứa tuổi với lối chơi đơn giản, có tính giải trí cao. Nhiệm vụ duy nhất là phá hủy tất cả "bricks". Mỗi màn có cách bố trí bricks và độ khó khác nhau.</p>
+          <p>Bản hiện tại đã cập nhật các tính năng: hồi máu, nhân bản bóng... Game đang trong quá trình hoàn thiện, sẽ có thêm nhiều tính năng mới trong các bản cập nhật tới.</p>
+        `
+      },
+      'jump-ball': {
+        title: 'Jump Ball',
+        video: 'video/JumpBall.mp4',
+        content: `
+          <h3>Thể loại</h3>
+          <p>2D platformer đơn giản với cấu trúc platform cổ điển. Nhân vật chính là một quả bóng có thể nhảy và di chuyển trong màn chơi được thiết kế bằng tileset. Game tập trung vào khả năng điều khiển và né chướng ngại.</p>
+          <h3>Gameplay</h3>
+          <p>Người chơi điều khiển một quả bóng bật và nhảy qua các nền, tránh bẫy (spike), và cố gắng đi đến điểm cuối. Thử thách phản xạ và kỹ năng điều khiển của bạn để vượt qua từng màn chơi đầy thử thách.</p>
+        `
+      },
+      'mr-pink': {
+        title: 'Mr.Pink',
+        video: 'video/MrPink.mp4',
+        content: `
+          <h3>Cốt truyện</h3>
+          <p>Mr.Pink là một sinh vật nhỏ bé nhưng gan dạ, bị cuốn vào chuyến phiêu lưu trong vùng đất dung nham và bóng tối. Sau một biến cố bí ẩn, cánh cổng giữa thế giới quái vật và con người bị mở ra. Những kẻ thù hung hãn trỗi dậy, canh giữ các con đường nguy hiểm.</p>
+          <p>Mr.Pink buộc phải chiến đấu để sinh tồn và tìm ra sự thật đằng sau thảm họa. Trên hành trình đó, cậu đã chiến đấu với các quái vật hung hãng để đem lại bình yên cho vùng đất đó.</p>
+          <h3>Mô tả</h3>
+          <p>Đây là một game phiêu lưu hành động phong cách pixel art, góc nhìn từ trên xuống (top-down). Người chơi điều khiển Mr.Pink, khám phá các khu vực nguy hiểm với địa hình dung nham, đá cổ và bãi cỏ, được chia rõ ràng theo từng vùng.</p>
+          <p>Trong game xuất hiện nhiều quái vật canh gác, buộc người chơi phải né tránh hoặc chiến đấu để tiếp tục hành trình. Lối chơi tập trung vào di chuyển khéo léo, phản xạ nhanh và khám phá bản đồ.</p>
+        `
+      },
+      'snake-remix': {
+        title: 'Snake Remix',
+        video: 'video/SnakeRemix.mp4',
+        content: `
+          <h3>Mô tả</h3>
+          <p>Snake Remix là phiên bản 2D của Rắn Săn Mồi cổ điển kết hợp với âm nhạc hiện đại. Điểm đặc trưng là người chơi được chọn một bản nhạc remix trước khi chơi. Tốc độ và hiệu ứng của game sẽ thay đổi theo nhịp điệu của bản nhạc đã chọn, biến mỗi lần chơi thành một trải nghiệm âm thanh và tốc độ hoàn toàn khác biệt.</p>
+          <h3>Cốt truyện</h3>
+          <p>Trong một thế giới kỹ thuật số đầy màu sắc và ánh sáng, tồn tại một sinh vật mã hóa là The Neon Snake. Nhiệm vụ của nó là duy trì sự sống và lớn mạnh bằng cách hấp thụ những quả táo năng lượng.</p>
+          <p>Bạn chọn một bản nhạc remix - đó là "Tâm Hồn Âm Nhạc" của The Neon Snake, rồi hướng dẫn nó nhảy múa và săn mồi theo nhịp điệu đó. "Không cần cốt truyện phức tạp. Chỉ cần một con rắn, một quả táo, và nhịp điệu hoàn hảo. Hãy chọn beat, và bắt đầu chơi!"</p>
+        `
+      }
+    };
+
+    function showGameDetail(gameId) {
+      const game = gameDetails[gameId];
+      if (game) {
+        document.getElementById('modalTitle').textContent = game.title;
+        
+        // Add video if exists, then content
+        let modalContent = '';
+        if (game.video) {
+          modalContent += `
+            <div class="modal-video">
+              <video controls autoplay muted loop>
+                <source src="${game.video}" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+              </video>
+            </div>
+          `;
+        }
+        modalContent += game.content;
+        
+        document.getElementById('modalBody').innerHTML = modalContent;
+        document.getElementById('gameModal').style.display = 'flex';
+      }
     }
 
-    function openDemo(el) {
-      const url = el.getAttribute('data-video');
-      const iframe = document.getElementById('demo-iframe');
-      iframe.src = url + '?rel=0';
-      const modal = document.getElementById('demo-modal');
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-    }
-    function closeDemo(e) {
-      e && e.preventDefault && e.preventDefault();
-      const iframe = document.getElementById('demo-iframe');
-      iframe.src = '';
-      const modal = document.getElementById('demo-modal');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-    }
-
-    let currentRatingCard = null;
-    let selectedStarValue = 0;
-
-    function openRating(btn) {
-      currentRatingCard = btn.closest('.card');
-      selectedStarValue = 0;
-      document.querySelectorAll('.star').forEach(s => s.textContent = '☆');
-      const modal = document.getElementById('rating-modal');
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeRating(e) {
-      e && e.preventDefault && e.preventDefault();
-      const modal = document.getElementById('rating-modal');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-      currentRatingCard = null;
-      selectedStarValue = 0;
-    }
-
-    function selectStar(value) {
-      selectedStarValue = value;
-      const stars = document.querySelectorAll('.star');
-      stars.forEach((star, index) => {
-        star.textContent = index < value ? '★' : '☆';
+    function closeGameDetail() {
+      document.getElementById('gameModal').style.display = 'none';
+      // Stop all videos when closing modal
+      const videos = document.querySelectorAll('#gameModal video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
       });
     }
 
-    function submitRating() {
-      if (selectedStarValue === 0) {
-        showToast('Vui lòng chọn số sao đánh giá!', 'warning');
-        return;
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('gameModal');
+      if (event.target === modal) {
+        closeGameDetail();
       }
-      
-      if (currentRatingCard) {
-        const ratingDiv = currentRatingCard.querySelector('.rating');
-        const currentScore = parseFloat(ratingDiv.dataset.score);
-        const currentCount = parseInt(ratingDiv.dataset.count || '1');
-        
-        // Tính điểm trung bình mới
-        const newScore = ((currentScore * currentCount) + selectedStarValue) / (currentCount + 1);
-        ratingDiv.dataset.score = newScore.toFixed(1);
-        ratingDiv.dataset.count = currentCount + 1;
-        
-        // Cập nhật hiển thị
-        const scoreSpan = ratingDiv.querySelector('.score');
-        scoreSpan.textContent = newScore.toFixed(1);
-        
-        showToast(`Cảm ơn bạn đã đánh giá ${selectedStarValue} sao! ⭐`, 'success');
-        closeRating();
-      }
-    }
-
-    function showToast(message, type = 'success') {
-      const toast = document.getElementById('toast-notification');
-      const messageEl = toast.querySelector('.toast-message');
-      const iconEl = toast.querySelector('.toast-icon');
-      
-      messageEl.textContent = message;
-      
-      if (type === 'success') {
-        iconEl.textContent = '✓';
-        toast.className = 'toast-notification toast-success';
-      } else if (type === 'warning') {
-        iconEl.textContent = '⚠';
-        toast.className = 'toast-notification toast-warning';
-      }
-      
-      toast.classList.add('show');
-      
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
     }
   </script>
 </body>
