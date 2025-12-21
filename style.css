@@ -674,6 +674,74 @@ main h3 { margin-top:1.5rem; margin-bottom:0.8rem; font-size:1.2rem; color:#fff;
   padding: 0.8rem 2rem;
 }
 
+/* Game Detail Modal */
+.game-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(2,6,23,0.9), rgba(2,6,23,0.95));
+  padding: 1rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.game-modal .modal-content {
+  width: 95%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #0a1628, #0f1b2e);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  border: 2px solid rgba(0,212,255,0.3);
+  box-shadow: 0 30px 80px rgba(2,6,23,0.9), 0 0 100px rgba(0,212,255,0.2);
+}
+
+.game-modal .modal-close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.game-modal .modal-close:hover {
+  background: rgba(255,255,255,0.2);
+  transform: rotate(90deg);
+}
+
+.modal-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.modal-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Toast Notification */
 .toast-notification {
   position: fixed;
