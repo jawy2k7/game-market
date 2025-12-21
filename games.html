@@ -61,9 +61,24 @@
     <h2 class="section-title gradient-text">Danh Sách Game</h2>
     <p class="muted text-center">Khám phá những trò chơi tuyệt vời do nhóm chúng tôi phát triển</p>
 
+    <!-- Search and Filter Section -->
+    <div class="search-filter-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm game theo tên..." />
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">Tất cả</button>
+        <button class="filter-btn" data-category="Survival">Survival</button>
+        <button class="filter-btn" data-category="Arcade">Arcade</button>
+        <button class="filter-btn" data-category="Adventure">Adventure</button>
+        <button class="filter-btn" data-category="Puzzle">Puzzle</button>
+        <button class="filter-btn" data-category="Shooter">Shooter</button>
+      </div>
+    </div>
+
     <div class="grid game-grid">
       <!-- Game 1: Happy Boo -->
-      <div class="card game-card game-color-1">
+      <div class="card game-card game-color-1" data-name="happy boo" data-tags="survival shooter">
         <div class="game-badge">🎮</div>
         <img src="image/GameCover/HappyBoo.png" alt="Happy Boo" />
         <div class="card-body">
@@ -82,7 +97,7 @@
       </div>
 
       <!-- Game 2: Break Out -->
-      <div class="card game-card game-color-2">
+      <div class="card game-card game-color-2" data-name="break out" data-tags="arcade casual">
         <div class="game-badge">🎯</div>
         <img src="image/GameCover/BreakOut.jpg" alt="Break Out" />
         <div class="card-body">
@@ -101,7 +116,7 @@
       </div>
 
       <!-- Game 3: Jump Ball -->
-      <div class="card game-card game-color-3">
+      <div class="card game-card game-color-3" data-name="jump ball" data-tags="adventure puzzle">
         <div class="game-badge">⚡</div>
         <img src="image/GameCover/JumpBall.jpg" alt="Jump Ball" />
         <div class="card-body">
@@ -120,7 +135,7 @@
       </div>
 
       <!-- Game 4: RPG -->
-      <div class="card game-card game-color-4">
+      <div class="card game-card game-color-4" data-name="mr pink mrpink" data-tags="adventure puzzle action">
         <div class="game-badge">🗡️</div>
         <img src="image/GameCover/MrPink.png" alt="RPG" />
         <div class="card-body">
@@ -139,7 +154,7 @@
       </div>
 
       <!-- Game 5: Snake Remix -->
-      <div class="card game-card game-color-5">
+      <div class="card game-card game-color-5" data-name="snake remix" data-tags="arcade casual">
         <div class="game-badge">🐍</div>
         <img src="image/GameCover/SnakeRemix.png" alt="Snake Remix" />
         <div class="card-body">
@@ -377,6 +392,70 @@
       const modal = document.getElementById('gameModal');
       if (event.target === modal) {
         closeGameDetail();
+      }
+    }
+
+    // Search and Filter Functionality
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const gameCards = document.querySelectorAll('.game-card');
+
+    let currentFilter = 'all';
+
+    // Search function
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      filterGames(searchTerm, currentFilter);
+    });
+
+    // Filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        currentFilter = this.getAttribute('data-category');
+        const searchTerm = searchInput.value.toLowerCase();
+        filterGames(searchTerm, currentFilter);
+      });
+    });
+
+    function filterGames(searchTerm, category) {
+      let visibleCount = 0;
+      
+      gameCards.forEach(card => {
+        const name = card.getAttribute('data-name') || '';
+        const tags = card.getAttribute('data-tags') || '';
+        
+        const matchesSearch = name.includes(searchTerm) || tags.includes(searchTerm);
+        const matchesCategory = category === 'all' || tags.includes(category.toLowerCase());
+        
+        if (matchesSearch && matchesCategory) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show message if no games found
+      const gameGrid = document.querySelector('.game-grid');
+      let noResultMsg = document.getElementById('noResultMessage');
+      
+      if (visibleCount === 0) {
+        if (!noResultMsg) {
+          noResultMsg = document.createElement('div');
+          noResultMsg.id = 'noResultMessage';
+          noResultMsg.className = 'no-results';
+          noResultMsg.innerHTML = '<p>😔 Không tìm thấy game phù hợp</p>';
+          gameGrid.parentNode.insertBefore(noResultMsg, gameGrid.nextSibling);
+        }
+        noResultMsg.style.display = 'block';
+      } else {
+        if (noResultMsg) {
+          noResultMsg.style.display = 'none';
+        }
       }
     }
   </script>
