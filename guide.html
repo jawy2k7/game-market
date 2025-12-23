@@ -45,12 +45,50 @@
     <p>File cài đặt: .zip, .apk; Ảnh minh họa: .png/.jpg; Video demo: YouTube link.</p>
 
     <h3>Điều khoản sử dụng</h3>
-    <p>Vui lòng đọc kỹ <a href="Dieu_khoan_su_dung_nen_tang_game.docx" download>Điều khoản sử dụng nền tảng game</a> trước khi đăng tải game.</p>
+    <p>Vui lòng đọc kỹ <button id="viewTermsBtn" class="terms-btn">Điều khoản sử dụng nền tảng game</button> trước khi đăng tải game.</p>
 
     <div class="note">
       <strong>Lưu ý:</strong> Đây là nền tảng mô phỏng cho đồ án. Trong thực tế cần hệ thống kiểm duyệt và lưu trữ an toàn.
     </div>
   </main>
+
+  <!-- Modal Điều khoản -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Điều khoản sử dụng nền tảng game</h2>
+      <div class="terms-content">
+        <h3>1. Giới thiệu</h3>
+        <p>Chào mừng bạn đến với nền tảng Chợ Ứng Dụng Game. Bằng việc sử dụng nền tảng này, bạn đồng ý tuân thủ các điều khoản và điều kiện sau đây.</p>
+        
+        <h3>2. Quyền và trách nhiệm của người đăng tải</h3>
+        <ul>
+          <li>Người đăng tải phải đảm bảo rằng nội dung game không vi phạm bản quyền của bất kỳ bên thứ ba nào.</li>
+          <li>Người đăng tải hoàn toàn chịu trách nhiệm về nội dung game được đăng tải.</li>
+          <li>Không được đăng tải nội dung chứa mã độc, virus hoặc phần mềm gây hại.</li>
+          <li>Không đăng tải nội dung khiêu dâm, bạo lực quá mức, hoặc kích động thù hận.</li>
+        </ul>
+        
+        <h3>3. Quy trình kiểm duyệt</h3>
+        <p>Tất cả các game đăng tải sẽ được kiểm duyệt trước khi công khai. Nền tảng có quyền từ chối hoặc gỡ bỏ bất kỳ nội dung nào vi phạm điều khoản.</p>
+        
+        <h3>4. Bản quyền và sở hữu trí tuệ</h3>
+        <p>Người đăng tải giữ quyền sở hữu trí tuệ đối với game của mình. Tuy nhiên, bằng việc đăng tải lên nền tảng, bạn cấp cho chúng tôi quyền hiển thị, phân phối và quảng bá game của bạn trên nền tảng.</p>
+        
+        <h3>5. Chính sách bảo mật</h3>
+        <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và chỉ sử dụng cho mục đích quản lý nền tảng.</p>
+        
+        <h3>6. Giới hạn trách nhiệm</h3>
+        <p>Nền tảng không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng các game được đăng tải trên nền tảng.</p>
+        
+        <h3>7. Thay đổi điều khoản</h3>
+        <p>Chúng tôi có quyền thay đổi các điều khoản này bất kỳ lúc nào. Việc tiếp tục sử dụng nền tảng sau khi có thay đổi đồng nghĩa với việc bạn chấp nhận các điều khoản mới.</p>
+        
+        <h3>8. Liên hệ</h3>
+        <p>Nếu có bất kỳ thắc mắc nào về điều khoản sử dụng, vui lòng liên hệ với chúng tôi qua email hoặc form liên hệ trên website.</p>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
@@ -58,6 +96,27 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Modal functionality
+    const modal = document.getElementById('termsModal');
+    const btn = document.getElementById('viewTermsBtn');
+    const span = document.getElementsByClassName('close')[0];
+    
+    btn.onclick = function() {
+      modal.style.display = 'flex';
+    }
+    
+    span.onclick = function() {
+      modal.style.display = 'none';
+    }
+    
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>

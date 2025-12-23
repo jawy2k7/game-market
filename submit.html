@@ -65,12 +65,11 @@
         <button type="submit" class="btn">Gửi</button>
         <button type="reset" class="btn outline">Xóa</button>
       </div>
-
-      <div id="submit-msg" class="submit-msg" aria-live="polite"></div>
     </form>
-
-    <p class="muted">Hoặc gửi qua Google Form mẫu: <a href="https://forms.gle/your-google-form" target="_blank" rel="noopener">Mở Google Form</a></p>
   </main>
+
+  <!-- Toast Notification -->
+  <div id="submit-msg" class="toast-notification" aria-live="polite"></div>
 
   <footer class="site-footer">
     <div class="container">
@@ -83,10 +82,14 @@
     function handleSubmit(e) {
       e.preventDefault();
       const msg = document.getElementById('submit-msg');
-      msg.textContent = 'Gửi thành công. Cảm ơn bạn đã gửi game. Nhóm sẽ kiểm duyệt trong vòng 3-5 ngày làm việc.';
-      msg.classList.add('success');
+      msg.innerHTML = '<span class="toast-icon">✓</span><span>Gửi thành công!</span>';
+      msg.classList.add('show');
       e.target.reset();
-      window.scrollTo({ top: msg.offsetTop - 80, behavior: 'smooth' });
+      
+      // Tự động ẩn sau 3 giây
+      setTimeout(() => {
+        msg.classList.remove('show');
+      }, 3000);
     }
   </script>
 </body>
